@@ -36,13 +36,13 @@ PageComponent.init(
       },
     },
     component_id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-          model: 'component',
-          key: 'id',
-        },
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'component',
+        key: 'id',
       },
+    },
   },
   {
     sequelize,
