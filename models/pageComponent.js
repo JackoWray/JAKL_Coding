@@ -2,6 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class PageComponent extends Model {}
+// This comment means nothing
 
 PageComponent.init(
   {
@@ -42,6 +43,9 @@ PageComponent.init(
         model: 'component',
         key: 'id',
       },
+    },
+    pointless_value: {
+      type: DataTypes.INTEGER,
     },
   },
   {
