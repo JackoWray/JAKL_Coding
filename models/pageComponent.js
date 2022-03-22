@@ -44,6 +44,9 @@ PageComponent.init(
         key: 'id',
       },
     },
+    pointless_value: {
+      type: DataTypes.INTEGER,
+    },
   },
   {
     sequelize,

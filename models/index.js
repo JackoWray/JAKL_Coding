@@ -1,7 +1,7 @@
 const User = require('./User');
 const Page = require('./Page');
 const Component = require('./Component');
-const PageComponent = require('./PageComponent');
+const PageComponent = require('./pageComponent');
 
 User.hasMany(Page, {
   foreignKey: 'user_id',
