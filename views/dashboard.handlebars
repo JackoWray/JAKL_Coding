@@ -1,5 +1,21 @@
-{{! Get started button 
-Linking to signup  }}
+<div class="max-w-4xl mx-auto">
+    <h1 class="text-4xl">{{name}}'s Pages</h1>
+    {{#if pages}}
+        {{#each pages}}
+            <div class="border border-zinc-900 ">
+                <h1>{{title}}</h1>
+                <p class="text-zinc-600">{{dateCreated}}</p>
+                <div class="flex gap-2">
+                    <button class="rounded-full bg-red-600 shadow-lg text-white text-2xl hover:bg-red-500 hover:shadow-xl hover:-translate-y-1 transition-all">View</button>
+                    <button class="rounded-full bg-red-600 shadow-lg text-white text-2xl hover:bg-red-500 hover:shadow-xl hover:-translate-y-1 transition-all">Edit</button>
+                    <button class="rounded-full bg-red-600 shadow-lg text-white text-2xl hover:bg-red-500 hover:shadow-xl hover:-translate-y-1 transition-all">Delete</button>
+                </div>
+            </div>
+        {{/each}}
+    {{else}}
+        <h3>You don't have any saved pages atm.</h3>
+    {{/if}}
 
-{{! Login button   
-Linking to login page }}
+    <a id="create-page-btn" href="/create" class="rounded-full bg-red-600 shadow-lg text-white text-2xl hover:bg-red-500 hover:shadow-xl hover:-translate-y-1 transition-all"></a>
+
+</div>
