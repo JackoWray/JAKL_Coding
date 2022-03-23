@@ -6,9 +6,9 @@
                 <h1>{{title}}</h1>
                 <p class="text-zinc-600">{{dateCreated}}</p>
                 <div class="flex gap-2">
-                    <button class="rounded-full bg-red-600 shadow-lg text-white text-2xl hover:bg-red-500 hover:shadow-xl hover:-translate-y-1 transition-all">View</button>
-                    <button class="rounded-full bg-red-600 shadow-lg text-white text-2xl hover:bg-red-500 hover:shadow-xl hover:-translate-y-1 transition-all">Edit</button>
-                    <button class="rounded-full bg-red-600 shadow-lg text-white text-2xl hover:bg-red-500 hover:shadow-xl hover:-translate-y-1 transition-all">Delete</button>
+                    <a href="/user/{{userId}}/view/{{pageId}}" class="rounded-full bg-red-600 shadow-lg text-white text-2xl hover:bg-red-500 hover:shadow-xl hover:-translate-y-1 transition-all">View</a>
+                    <a href="/user/{{userId}}/edit/{{pageId}}" class="rounded-full bg-red-600 shadow-lg text-white text-2xl hover:bg-red-500 hover:shadow-xl hover:-translate-y-1 transition-all">Edit</a>
+                    <a href="/user/{{userId}}/delete/{{pageId}}" class="rounded-full bg-red-600 shadow-lg text-white text-2xl hover:bg-red-500 hover:shadow-xl hover:-translate-y-1 transition-all">Delete</a>
                 </div>
             </div>
         {{/each}}
