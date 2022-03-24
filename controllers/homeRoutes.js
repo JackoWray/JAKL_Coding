@@ -1,10 +1,10 @@
 const router = require('express').Router();
 const { User } = require('../models');
-const withAuth = require('../utils/auth');
+const withAuth = require('../helpers/auth');
 
 // Get homepage handlebar, blogs, navbar and login.
 
-router.get('/', withAuth, (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     const userData = await User.findAll({
       attributes: { exclude: ['password'] },
