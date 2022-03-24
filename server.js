@@ -4,7 +4,7 @@ const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3006;
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -33,5 +33,5 @@ app.set('view engine', 'handlebars');
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening to http://localhost:3001'));
+  app.listen(PORT, () => console.log('Now listening to http://localhost:3006'));
 });
