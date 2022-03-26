@@ -32,6 +32,30 @@ router.post('/login', async (req, res) => {
   }
 });
 
+router.post('/signup', async (req, res) => {
+  try {
+    const signupData = await User.create(req.body);
+
+    if (!signupData) {
+      res
+        .status(409)
+        .json({ message: 'There is already an account for this email.' });
+      return;
+    }
+
+    const userData = await User.findOne({ where: { email: req.body.email } });
+
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+
+      res.json({ user: userData, message: 'You are now logged in!' });
+    });
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
