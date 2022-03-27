@@ -1,4 +1,4 @@
-const loginFormHandler = async (event) => {
+const signupFormHandler = async (event) => {
   event.preventDefault();
 
   const signupFirstname = document
@@ -11,28 +11,29 @@ const loginFormHandler = async (event) => {
   const signupPassword = document
     .querySelector('#signup-password')
     .value.trim();
-  const passwordConfirm = document
-    .querySelector('#password-confirm')
-    .value.trim();
+  // const passwordConfirm = document
+  //   .querySelector('#password-confirm')
+  //   .value.trim();
 
   if (
     signupFirstname &&
     signupLastname &&
     signupEmail &&
-    signupPassword &&
-    passwordConfirm
+    signupPassword //&&
+    // passwordConfirm &&
+    // signupPassword === passwordConfirm
   ) {
-    const response = await fetch('/api/users', {
+    const response = await fetch('/api/users/signup', {
       method: 'POST',
       body: JSON.stringify({
-        signupFirstname,
-        signupLastname,
-        signupEmail,
-        signupPassword,
-        passwordConfirm,
+        first_name: signupFirstname,
+        last_name: signupLastname,
+        email: signupEmail,
+        password: signupPassword,
       }),
       headers: { 'Content-Type': 'application/json' },
     });
+    console.log(response);
     if (response.ok) {
       document.location.replace('/dashboard');
     } else {

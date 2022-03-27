@@ -16,13 +16,20 @@
 <body class="w-full h-full">
     <nav class="flex justify-between p-5 bg-orange-200">
         <h1 class="text-5xl text-black font-bold">Build-A-Page</h1>
-        <div class="flex gap-12 font-medium text-md mt-3">
+        <div class="flex gap-12 font-medium text-md mt-3 items-center">
             <a href="/dashboard">📄 Dashboard</a>
+            {{#if logged_in}}
+            <button id="logout-btn">🔑 Logout</button>
+            {{else}}
             <a href="/signup">🔑 Sign up & get started now!</a>
+            {{/if}}
         </div>
     </nav>
     <main>
         {{{body}}}
     </main>
 </body>
+    {{#if logged_in}}
+        <script src="./js/logout.js"></script>
+    {{/if}}
 </html>
