@@ -60,7 +60,7 @@ function formatWidgets(widgets) {
 }
 
 // save button function
-save.addEventListener('click', () => {
+save.addEventListener('click', async () => {
   const widgetData = grid.save();
 
   const pageTitle = pageTitleInput.value.trim();
@@ -72,10 +72,25 @@ save.addEventListener('click', () => {
   } else {
     const newWidgetData = formatWidgets(widgetData);
     console.log(newWidgetData);
-    // fetch('api/pages/', () => {
-    //   method = 'POST',
-    // page = pageTitle
-    // });
+    debugger;
+    const newPage = {
+      title: pageTitle,
+      components: newWidgetData,
+    };
+
+    const response = await fetch('api/page-components/save', {
+      method: 'POST',
+      body: JSON.stringify(newPage),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (response.ok) {
+      document.location = '/';
+    } else {
+      // DSIPLAY ERROR
+    }
   }
 });
 

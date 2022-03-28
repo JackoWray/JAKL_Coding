@@ -1,7 +1,11 @@
 const sequelize = require('../config/connection');
 const { Model, DataTypes } = require('sequelize');
 
-class Page extends Model {}
+class Page extends Model {
+  getId() {
+    return this.id;
+  }
+}
 
 Page.init(
   {
