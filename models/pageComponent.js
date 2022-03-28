@@ -36,17 +36,21 @@ PageComponent.init(
         key: 'id',
       },
     },
-    component_id: {
-      type: DataTypes.INTEGER,
+    content: {
+      type: DataTypes.STRING,
       allowNull: false,
-      references: {
-        model: 'component',
-        key: 'id',
-      },
     },
-    pointless_value: {
-      type: DataTypes.INTEGER,
-    },
+    // component_id: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false,
+    //   references: {
+    //     model: 'component',
+    //     key: 'id',
+    //   },
+    // },
+    // pointless_value: {
+    //   type: DataTypes.INTEGER,
+    // },
   },
   {
     sequelize,
