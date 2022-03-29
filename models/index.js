@@ -1,6 +1,6 @@
 const User = require('./User');
 const Page = require('./Page');
-const Component = require('./Component');
+// const Component = require('./Component');
 const PageComponent = require('./pageComponent');
 
 User.hasMany(Page, {
@@ -13,7 +13,17 @@ Page.belongsTo(User, {
   onDelete: 'CASCADE',
 });
 
-Component.belongsToMany(Page, { through: PageComponent });
-Page.belongsToMany(Component, { through: PageComponent });
+Page.hasMany(PageComponent, {
+  foreignKey: 'page_id',
+  onDelete: 'CASCADE',
+});
 
-module.exports = { User, Page, Component, PageComponent };
+PageComponent.belongsTo(Page, {
+  foreignKey: 'page_id',
+  onDelete: 'CASCADE',
+});
+
+// Component.belongsToMany(Page, { through: PageComponent });
+// Page.belongsToMany(Component, { through: PageComponent });
+
+module.exports = { User, Page, PageComponent };
