@@ -16,4 +16,18 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+router.delete('/:id', async (req, res) => {
+  try {
+    const pageData = await Page.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+    console.log(pageData);
+    res.status(200).json(pageData); //.get({ plain: true })
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
 module.exports = router;
