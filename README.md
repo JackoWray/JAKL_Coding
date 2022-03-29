@@ -1,5 +1,5 @@
 # 📄Build-A-Page📄
-<a href="https://project-02-jakl.herokuapp.com/login">![Deployed App](https://img.shields.io/badge/-Deployed-success?style=for-the-badge)</a> ![License](https://img.shields.io/badge/License-MIT-red?style=for-the-badge&logo) ![Top language](https://img.shields.io/github/languages/top/jackowray/jakl_coding?style=for-the-badge&logo) ![Repo Size](https://img.shields.io/github/repo-size/jackowray/jakl_coding?color=orange&style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-red) ![Top language](https://img.shields.io/github/languages/top/jackowray/jakl_coding?style=for-the-badge&logo) ![Repo Size](https://img.shields.io/github/repo-size/jackowray/jakl_coding?color=orange&style=for-the-badge)
 
 ## Description
 An easy drag and drop application that can be used with little to no technology experience that allows you to create simple templates for all your report and newsletter needs. A save feature is included that allows you to log back in and access your saved templates at any time. 
@@ -57,6 +57,12 @@ Seed the database<br>
 
 Start the server<br>
 `npm start`
+
+![Command capture](public\assets\landingpage.png)
+![Command capture](public\assets\signup.png)
+![Command capture](public\assets\createpage.png)
+![Command capture](public\assets\pageview.png)
+
 
 ## Contribution
 Please feel free to contribute in any way by forking the repo and creating a pull request.
