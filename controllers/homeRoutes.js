@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Page } = require('../models');
+const { User, Page, PageComponent } = require('../models');
 const withAuth = require('../helpers/auth');
 
 // Get homepage handlebar, blogs, navbar and login.
@@ -94,6 +94,17 @@ router.get('/signup', (req, res) => {
 
 router.get('/create', withAuth, (req, res) => {
   res.render('edit', { logged_in: req.session.logged_in });
+});
+
+router.get('/pageview', withAuth, async (req, res) => {
+  try {
+    res.render('pageview', {
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;

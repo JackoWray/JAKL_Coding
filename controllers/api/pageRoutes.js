@@ -1,14 +1,19 @@
-// const router = require('express').Router();
-// const { Page } = require('../../models');
+const router = require('express').Router();
+const { Page, PageComponent } = require('../../models');
 
-// router.post('/', async (req, res) => {
-//   try {
-//     const pageData = await Page.create({
-//       title: req.body.title,
-//       user_id: req.session.user_id,
-//     });
-//     res.status(200).json(pageData);
-//   } catch (err) {
-//     res.status(400).json(err);
-//   }
-// });
+router.get('/:id', async (req, res) => {
+  try {
+    const pageData = await Page.findByPk(req.params.id, {
+      include: [
+        {
+          model: PageComponent,
+        },
+      ],
+    });
+    res.status(200).json(pageData.get({ plain: true }));
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+module.exports = router;
