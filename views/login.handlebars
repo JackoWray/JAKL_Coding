@@ -1,46 +1,61 @@
-<!-- {{! Inputs for email and password }}
+<div class='h-full grid grid-cols-12'>
+    <!-- First form column -->
+        <div class="col-span-12 md:col-span-4 text-white font-sans font-bold bg-black md:min-h-screen pl-7">
+            <div class="grid grid-rows-6 grid-flow-col min-h-screen items-center justify-items-start">
+                <div class="row-span-4 row-start-2 text-3xl text-white">
+                             Do you want to build a page, without being a coding genius?    
+                             <form id="login-form" action="#" method="POST">
+                <input type="hidden" name="remember" value="true" />
 
-{{! Button for login with inputs
-or "if you haven't previously made an account"  btn for sign up }}
+                    <div class="pt-10 pr-20">                        
+                        <label class="text-sm font-sans font-medium uppercase" for="email">
+                            Email
+                        </label>
+                        <input 
+                            id="login-email"
+                            type="email" 
+                            name="email" 
+                            placeholder="Write your email" 
+                            autocomplete="email" 
+                            required class="mt-2 w-full bg-white py-3 px-5 border hover: border-gray-500 shadow text-black font-sans"/>                            
+                    </div>
 
-{{! Login btn links to dashboard }} -->
+                    <div class="pt-6 pr-20">
+                        <label class="text-sm font-sans font-medium uppercase" for="password">
+                            Password
+                        </label>
+                        <input 
+                            id="login-password"
+                            type="password" 
+                            name="password" 
+                            placeholder="Write your password" 
+                            autocomplete="password"
+                            required class="mt-2 w-full bg-white py-3 px-5 border hover: border-gray-500 shadow text-black font-sans"/>
+                    </div>
 
-<h1 class="text-2xl font-semibold leading-6 pl-20 pt-20">
-    Do you want to build a page, without being a coding genius?</h1>
-<div class="flex gap-3">
-    <div class="w-full max-w-lg ml-20 pt-12 mb-10">
-        <form class="bg-white border border-red-500 shadow-2xl rounded-sm px-10 pt-12 pb-12 mb-10" id="login-form" action="#"
-            method="POST">
-            <input type="hidden" name="remember" value="true" />
-
-            <div class="mb-4">
-                <label class="block mb-2 text-xs font-semibold text-gray-600 uppercase" for="email">
-                    Email
-                </label>
-                <input id="login-email" name="email" type="email" autocomplete="email" required
-                class="shadow appearance-none border w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
-            </div>
-
-            <div class="mb-8">
-                <label class="block mb-2 text-xs font-semibold text-gray-600 uppercase" for="password">
-                    Password
-                </label>
-                <input id="login-password" name="password" type="password" autocomplete="password" required
-                    class="shadow appearance-none border w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
-                <p class="pt-3 text-red-500 text-xs italic">Please choose a password.</p>
-            </div>
-
-            <div class="flex items-center justify-between">
-                <button type="submit" id="login-btn"
-                    class="w-full py-3 font-medium tracking-widest uppercase shadow-lg text-white bg-red-500 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2"
-                    type="button">
-                    Log In
-                </button>
-            </div>
-        </form>
-    </div>
-    <div><img class="w-50 pr-20" src="./assets/login.jpg"></div>
+                    <div class="text-sm font-sans font-medium w-full pr-20 pt-8">
+                        <button type="submit" id="login-btn"
+                        class="w-full py-3 font-medium tracking-widest uppercase shadow-lg text-white bg-red-500 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2"
+                        type="button">
+                        Log In
+                    </button>
+                    </div>
+                </div>
+                </form>
+            </div>         
+        </div>
+        
+        <!-- Second column image -->
+        <div class="banner col-span-12 md:col-span-8 text-white font-sans font-bold">
+        </div>    
 </div>
 
+<style>
+    .banner {
+        background: url( '/assets/backgroundimg.jpg' );
+        background-repeat: no-repeat;
+        background-size: cover;        
+    }
+</style>
+
 <script src="./js/login.js"></script>
-<!-- <script src="https://cdn.tailwindcss.com"></script> -->

@@ -1,10 +1,13 @@
-# PROJECT 2
-![License](https://img.shields.io/badge/License-MIT-green)
+# 📄Build-A-Page📄
+<a href="https://project-02-jakl.herokuapp.com/login">![Deployed App](https://img.shields.io/badge/-Deployed-success?style=for-the-badge)</a> ![License](https://img.shields.io/badge/License-MIT-red?style=for-the-badge&logo) ![Top language](https://img.shields.io/github/languages/top/jackowray/jakl_coding?style=for-the-badge&logo) ![Repo Size](https://img.shields.io/github/repo-size/jackowray/jakl_coding?color=orange&style=for-the-badge)
 
 ## Description
-``` 
-xxxx
-```
+An easy drag and drop application that can be used with little to no technology experience that allows you to create simple templates for all your report and newsletter needs. A save feature is included that allows you to log back in and access your saved templates at any time. 
+
+**User story:**
+
+As a high school student with limited technology experience, I want to easily create a local community newsletter template so that I can save it and access it at a later date for all upcoming community meetings. 
+
 **App built with:**
 ```
 - JavaScript
@@ -15,6 +18,9 @@ xxxx
 - Express-handlebars
 - MySql
 - mysql2
+- Gridstack
+- PostCSS
+- Tailwind CSS
 - Sequelize
 - Insomnia
 - Heroku 
@@ -31,14 +37,26 @@ xxxx
   - [Credits](#credits)
 
 ## Installation
-After cloning the Github repository, run **npm install** in the terminal to install all dependencies.
+Clone the Github repository:<br>
+`https://github.com/JackoWray/JAKL_Coding.git`
+
+Install all dependencies required for application:<br>
+`npm install` 
   
 ## Usage
-To use this app, type the following in the terminal via the server.js file:
-```
-- npm run seed
-- npm start
-```
+To use this app, use the following commands:
+
+Log into MySQL & enter your password<br>
+`mysql -u root -p`
+
+Source the schema<br>
+`source schema.sql`
+
+Seed the database<br>
+`npm run seed`
+
+Start the server<br>
+`npm start`
 
 ## Contribution
 Please feel free to contribute in any way by forking the repo and creating a pull request.
@@ -53,4 +71,4 @@ This project is using the MIT license.
 If you have any questions, please contact us via [Email](mailto:liz.mackle@outlook.com) or [GitHub](https://github.com/LizMackle).
 
 ## Credits
-This app was created by [Kyle Bario](https://github.com/kbario) | [Jackson Wray](https://github.com/JackoWray) | [Liz Mackle](https://github.com/LizMackle) | [Ali]().
+This app was created by [Jackson Wray](https://github.com/JackoWray) | [Kyle Bario](https://github.com/kbario) | [Liz Mackle](https://github.com/LizMackle)
