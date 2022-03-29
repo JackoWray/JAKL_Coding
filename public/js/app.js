@@ -45,10 +45,9 @@ function reformatContent(objs) {
 
 // combine the above three functions
 function formatWidgets(widgets) {
-  const data = setSettingsToTrue(widgets);
-  const data2 = updateClass(data);
-  const data3 = reformatContent(data2);
-  return data3;
+  const data = updateClass(widgets);
+  const data1 = reformatContent(data);
+  return data1;
 }
 
 // save button function
