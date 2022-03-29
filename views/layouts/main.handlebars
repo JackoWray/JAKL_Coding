@@ -13,18 +13,18 @@
 
 </head>
 <body class="w-full h-full">
-    <nav class="flex justify-between p-5 bg-orange-200">
-        <h1 class="text-5xl text-black font-bold">Build-A-Page</h1>
-        <div class="flex gap-12 font-medium text-md mt-3 items-center">
+    <nav class="flex justify-between item-center p-4 h-20 bg-orange-200">
+        <h1 class="text-2xl sm:text-5xl text-black font-bold">Build-A-Page</h1>
+        <div class="flex gap-3 font-medium text-md mt-1 items-center">
             <a href="/dashboard">📄 Dashboard</a>
             {{#if logged_in}}
-            <button id="logout-btn">🔑 Logout</button>
+            <button class="font-medium text-md" id="logout-btn">🔑 Logout</button>
             {{else}}
-            <a href="/signup">🔑 Sign up & get started now!</a>
+            <a href="/signup">🔑 Sign up <span class="hidden sm:inline">& get started now!</span></a>
             {{/if}}
         </div>
     </nav>
-    <main>
+    <main class="h-leftover">
         {{{body}}}
     </main>
 </body>

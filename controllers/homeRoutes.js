@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { User, Page } = require('../models');
-const withAuth = require('../helpers/auth');
+const withAuth = require('../utils/auth');
 
 // Get homepage handlebar, blogs, navbar and login.
 

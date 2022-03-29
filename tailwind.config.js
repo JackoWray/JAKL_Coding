@@ -5,7 +5,11 @@ module.exports = {
     './public/js/*.js',
   ],
   theme: {
-    extend: {},
+    extend: {
+      height: (theme) => ({
+        leftover: 'calc(100vh - 5rem)',
+      }),
+    },
   },
   plugins: [require('@tailwindcss/forms')],
 };
