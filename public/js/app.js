@@ -13,14 +13,6 @@ const numbRows = 16;
 let isMobileMenuOpen = false;
 
 // functions used to reformat widget data upon save
-// set widget settings to true to disallow their resize and drag
-function setSettingsToTrue(widgetData) {
-  const updatedWidgetData = widgetData.map((item) => {
-    (item.noResize = true), (item.noMove = true), (item.locked = true);
-    return item;
-  });
-  return updatedWidgetData;
-}
 
 // update class so that it is display only also
 function updateClass(objs) {
@@ -204,58 +196,6 @@ const pageSignature = [
     content: '<div class="signature">Made using jakl</div>',
   },
 ];
-
-// const defaultWidgets = [
-
-//   {
-//     w: 6,
-//     h: 2,
-//     x: 3,
-//     y: 0,
-//     content: "\n            <div>Title</div>\n          ",
-//   },
-//   {
-//     w: 4,
-//     h: 14,
-//     x: 0,
-//     y: 2,
-//     content: "\n            <div>Text</div>\n          ",
-//   },
-//   {
-//     x: 4,
-//     y: 2,
-//     w: 4,
-//     h: 13,
-//     content: "\n            <div>Text</div>\n          ",
-//   },
-//   {
-//     w: 4,
-//     h: 6,
-//     x: 8,
-//     y: 2,
-//     content: "\n            <div>Img</div>\n          ",
-//   },
-//   {
-//     x: 8,
-//     y: 8,
-//     w: 4,
-//     h: 8,
-//     content: "\n            <div>Text</div>\n          ",
-//   },
-//   {
-//     x: 4,
-//     y: 15,
-//     w: 4,
-//     h: 1,
-//     noResize: true,
-//     noMove: true,
-//     locked: true,
-//     content:
-//       '<div class="flex justify-center items-center signature h-full">Made using jakl</div>',
-//   },
-// ];
-
-// grid.load(defaultWidgets);
 
 const grid = GridStack.init(gridOptions, '#first-grid');
 

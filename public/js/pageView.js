@@ -20,59 +20,30 @@ const grid = GridStack.init(
   '#display-grid'
 );
 
-const pageTitle = 'The Best Page in the World';
-const widgets = [
-  {
-    w: 6,
-    h: 2,
-    x: 3,
-    y: 0,
-    content: '<div class="title display-only">Title</div>',
-    noResize: true,
-    noMove: true,
-    locked: true,
-  },
-  {
-    w: 3,
-    h: 4,
-    x: 6,
-    y: 3,
-    content: '<div class="img display-only">Img</div>',
-    noResize: true,
-    noMove: true,
-    locked: true,
-  },
-  {
-    w: 2,
-    h: 2,
-    x: 2,
-    y: 4,
-    content: '<div class="our-text display-only">Text</div>',
-    noResize: true,
-    noMove: true,
-    locked: true,
-  },
-  {
-    x: 3,
-    y: 15,
-    w: 6,
-    h: 1,
-    noResize: true,
-    noMove: true,
-    locked: true,
-    content: '<div class="signature display-only">Made using jakl</div>',
-  },
-];
-
-// widgets = fetch
-
 function gridResize() {
   grid.cellHeight(gridBox.offsetHeight / numbRows);
 }
 
-function init() {
-  pageTitleEl.innerHTML = pageTitle;
+async function getPageData(id) {
+  const response = await fetch(`api/pages/${id}`);
+  const pages = await response.json();
+  return pages;
+}
+
+function setSettingsToTrue(widgetData) {
+  const updatedWidgetData = widgetData.map((item) => {
+    (item.noResize = true), (item.noMove = true), (item.locked = true);
+    return item;
+  });
+  return updatedWidgetData;
+}
+
+async function init() {
+  const page_id = new URLSearchParams(window.location.search).get('page_id');
+  const pageData = await getPageData(page_id);
+  const widgets = setSettingsToTrue(pageData.pageComponents);
   grid.load(widgets);
+  pageTitleEl.textContent = pageData.title;
   gridResize();
 }
 
