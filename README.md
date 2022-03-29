@@ -58,10 +58,10 @@ Seed the database<br>
 Start the server<br>
 `npm start`
 
-![Command capture](public\assets\landingpage.png)
-![Command capture](public\assets\signup.png)
-![Command capture](public\assets\createpage.png)
-![Command capture](public\assets\pageview.png)
+![Command capture](./public/assets/landingpage.png)
+![Command capture](./public/assets/signup.png)
+![Command capture](./public/assets/createpage.png)
+![Command capture](./public/assets/pageview.png)
 
 
 ## Contribution
