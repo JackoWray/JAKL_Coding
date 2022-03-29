@@ -71,8 +71,6 @@ save.addEventListener('click', async () => {
     alert('please fill in the title header');
   } else {
     const newWidgetData = formatWidgets(widgetData);
-    console.log(newWidgetData);
-    debugger;
     const newPage = {
       title: pageTitle,
       components: newWidgetData,

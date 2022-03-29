@@ -12,14 +12,57 @@ router.get('/dashboard', withAuth, async (req, res) => {
       include: [
         {
           model: Page,
-          attributes: ['title'],
+          attributes: {
+            include: ['title', 'createdAt', 'id'],
+            exclude: ['updatedAt', 'user_id'],
+          },
         },
       ],
     });
 
+    const pagesData = userData.pages.map((page) => page.get({ plain: true }));
+    pagesData.map((page) => {
+      const months = [
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Oct',
+        'Nov',
+        'Dec',
+      ];
+      const date = new Date(page.createdAt);
+      let lets;
+      switch (date.getDate().toString()[date.getDate().toString().length - 1]) {
+        case 1:
+          lets = 'st';
+        case 2:
+          lets = 'nd';
+        case 3:
+          lets = 'rd';
+
+        default:
+          lets = 'th';
+      }
+      page.createdAt =
+        date.getDate() +
+        lets +
+        ' ' +
+        months[date.getMonth()] +
+        ', ' +
+        date.getFullYear();
+      return page;
+    });
+
     res.render('dashboard', {
-      pages: userData,
+      pages: pagesData,
       name: req.session.name,
+      user_id: req.session.user_id,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -46,7 +89,7 @@ router.get('/signup', (req, res) => {
     return;
   }
 
-  res.render('signup');
+  res.render('signup', { logged_in: req.session.logged_in });
 });
 
 router.get('/create', withAuth, (req, res) => {
